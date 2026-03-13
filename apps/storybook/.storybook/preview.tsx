@@ -11,8 +11,8 @@ const preview: Preview = {
         title: "Profile",
         icon: "paintbrush",
         items: [
-          { value: "clear",    title: "Clear (light)" },
-          { value: "earth",    title: "Earth (warm)" },
+          { value: "clear", title: "Clear (light)" },
+          { value: "earth", title: "Earth (warm)" },
           { value: "twilight", title: "Twilight (dark)" },
         ],
         dynamicTitle: true,
@@ -25,10 +25,10 @@ const preview: Preview = {
         title: "Base Unit",
         icon: "ruler",
         items: [
-          { value: 2,  title: "2px — tight" },
-          { value: 4,  title: "4px — default" },
-          { value: 6,  title: "6px — loose" },
-          { value: 8,  title: "8px — wide" },
+          { value: 2, title: "2px — tight" },
+          { value: 4, title: "4px — default" },
+          { value: 6, title: "6px — loose" },
+          { value: 8, title: "8px — wide" },
         ],
         dynamicTitle: true,
       },
@@ -55,10 +55,10 @@ const preview: Preview = {
         title: "Variance",
         icon: "beaker",
         items: [
-          { value: 0,    title: "Off — exact" },
+          { value: 0, title: "Off — exact" },
           { value: 0.05, title: "5% — subtle" },
-          { value: 0.1,  title: "10% — moderate" },
-          { value: 0.2,  title: "20% — high" },
+          { value: 0.1, title: "10% — moderate" },
+          { value: 0.2, title: "20% — high" },
         ],
         dynamicTitle: true,
       },
@@ -66,10 +66,10 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const profile  = (context.globals.profile  ?? "clear") as ProfileName;
-      const baseUnit = (context.globals.baseUnit  ?? 4) as number;
-      const typeBase = (context.globals.typeBase  ?? 16) as number;
-      const variance = (context.globals.variance  ?? 0) as number;
+      const profile = (context.globals.profile ?? "clear") as ProfileName;
+      const baseUnit = (context.globals.baseUnit ?? 4) as number;
+      const typeBase = (context.globals.typeBase ?? 16) as number;
+      const variance = (context.globals.variance ?? 0) as number;
       return (
         <RengeProvider config={{ profile, baseUnit, typeBase, variance }}>
           <div style={{ padding: "var(--renge-space-5)", background: "var(--renge-color-bg)", minHeight: "100vh" }}>

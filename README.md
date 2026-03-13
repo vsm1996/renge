@@ -240,7 +240,7 @@ Use for avatar clusters, tag clouds, decorative patterns, radial menus, or data 
 
 ## The Name
 
-蓮華 (Renge) — the lotus flower. It blooms in muddy water. Cause and effect arise simultaneously.
+蓮華 (Renge) — the lotus flower. It blooms in muddy water. Seeding and blooming, cause and effect arise simultaneously.
 
 A design system built on natural proportions, named for the principle that form and function emerge together. The math *is* the beauty. The structure *is* the expression.
 
