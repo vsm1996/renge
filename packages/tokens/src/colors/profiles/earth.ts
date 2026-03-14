@@ -23,10 +23,10 @@ export const earth: SemanticColorMap = {
   fgInverse:    "oklch(20% 0.05 35)",          // dark brown on cream surface
   border:       "oklch(44% 0.08 35)",          // visible brown border
   borderSubtle: "oklch(32% 0.06 35)",          // subtle dark border
-  borderFocus:  oklch(palette.earthyOchre),    // amber focus ring
-  accent:       oklch(palette.earthyOchre),    // warm amber (h:40) on dark brown
-  accentHover:  oklch(palette.sunsetOrange),   // brighter orange-amber on hover
-  accentSubtle: "oklch(30% 0.1 40)",           // dark amber tint for subtle surfaces
+  borderFocus:  oklch(palette.honeyYellow),    // soft amber focus ring
+  accent:       oklch(palette.honeyYellow),    // light honey amber (l:80, h:50)
+  accentHover:  oklch(palette.earthyOchre),    // richer amber on hover (l:60, h:40)
+  accentSubtle: "oklch(30% 0.08 48)",          // dark honey tint for subtle surfaces
   success:      oklch(palette.leafGreen),
   successSubtle:"oklch(25% 0.08 130)",
   warning:      oklch(palette.honeyYellow),
