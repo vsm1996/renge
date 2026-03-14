@@ -192,7 +192,7 @@ export function Philosophy() {
           </p>
           <h2 style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(1.8rem, 4vw, var(--renge-font-size-3xl))",
+            fontSize: "clamp(32px, 4vw, 56px)",
             color: "var(--renge-color-fg)",
             fontWeight: 400,
             margin: 0,
@@ -240,7 +240,7 @@ export function Philosophy() {
               <div>
                 <h3 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "var(--renge-font-size-xl)",
+                  fontSize: "clamp(24px, 3vw, 36px)",
                   color: "var(--renge-color-fg)",
                   fontWeight: 400,
                   margin: 0,

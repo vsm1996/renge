@@ -66,7 +66,7 @@ export function ComingSoon() {
           variants={fadeUp}
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(1.8rem, 4vw, var(--renge-font-size-3xl))",
+            fontSize: "clamp(32px, 4vw, 56px)",
             color: "var(--renge-color-fg)",
             fontWeight: 400,
             margin: 0,
