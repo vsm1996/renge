@@ -579,28 +579,42 @@ var ocean = {
 };
 // src/colors/profiles/earth.ts
 var earth = {
-    bg: oklch(palette.birchWhite),
-    bgSubtle: oklch(palette.desertTan),
-    bgMuted: "oklch(92% 0.03 28)",
-    bgInverse: oklch(palette.barkBrown),
-    fg: "oklch(18% 0.04 28)",
-    fgSubtle: "oklch(33% 0.05 28)",
-    fgMuted: "oklch(52% 0.1 28)",
-    fgInverse: oklch(palette.birchWhite),
-    border: "oklch(76% 0.05 28)",
-    borderSubtle: "oklch(87% 0.03 28)",
-    borderFocus: oklch(palette.earthBrown),
-    accent: oklch(palette.earthBrown),
-    accentHover: oklch(palette.chocolate),
-    accentSubtle: "oklch(88% 0.06 28)",
-    success: oklch(palette.mossGreen),
-    successSubtle: "oklch(90% 0.08 130)",
-    warning: oklch(palette.sunsetOrange),
-    warningSubtle: "oklch(90% 0.08 40)",
-    danger: oklch(palette.autumnRed),
-    dangerSubtle: "oklch(90% 0.08 10)",
-    info: oklch(palette.slateBlue),
-    infoSubtle: "oklch(90% 0.08 210)"
+    bg: "oklch(22% 0.05 35)",
+    // deep soil brown
+    bgSubtle: "oklch(28% 0.07 35)",
+    // slightly lighter brown
+    bgMuted: "oklch(36% 0.08 35)",
+    // medium brown
+    bgInverse: "oklch(94% 0.03 42)",
+    // warm cream (inverse surface)
+    fg: "oklch(93% 0.03 42)",
+    // warm cream text
+    fgSubtle: "oklch(76% 0.07 40)",
+    // light tan
+    fgMuted: "oklch(58% 0.09 38)",
+    // muted sand
+    fgInverse: "oklch(20% 0.05 35)",
+    // dark brown on cream surface
+    border: "oklch(44% 0.08 35)",
+    // visible brown border
+    borderSubtle: "oklch(32% 0.06 35)",
+    // subtle dark border
+    borderFocus: oklch(palette.earthyOchre),
+    // amber focus ring
+    accent: oklch(palette.earthyOchre),
+    // warm amber (h:40) on dark brown
+    accentHover: oklch(palette.sunsetOrange),
+    // brighter orange-amber on hover
+    accentSubtle: "oklch(30% 0.1 40)",
+    // dark amber tint for subtle surfaces
+    success: oklch(palette.leafGreen),
+    successSubtle: "oklch(25% 0.08 130)",
+    warning: oklch(palette.honeyYellow),
+    warningSubtle: "oklch(28% 0.08 50)",
+    danger: oklch(palette.cranberryRed),
+    dangerSubtle: "oklch(26% 0.08 10)",
+    info: oklch(palette.skyBlue),
+    infoSubtle: "oklch(26% 0.06 210)"
 };
 // src/colors/profiles/twilight.ts
 var twilight = {
