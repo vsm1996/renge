@@ -1,6 +1,5 @@
 {
   "buildCommand": "pnpm --filter @renge/tokens build && pnpm --filter @renge/site build",
-  "outputDirectory": "apps/.next",
-  "installCommand": "pnpm install",
-  "framework": "nextjs"
+  "outputDirectory": "apps/out",
+  "installCommand": "pnpm install"
 }
