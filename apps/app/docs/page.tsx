@@ -81,36 +81,48 @@ function ComponentSection({ id, title, description, children }: { id: string; ti
 // ============================================================================
 
 const NAV_SECTIONS = [
-  { label: "Layout", items: [
-    { id: "stack", label: "Stack" },
-    { id: "grid", label: "Grid" },
-    { id: "section", label: "Section" },
-  ]},
-  { label: "Typography", items: [
-    { id: "heading", label: "Heading" },
-    { id: "text", label: "Text" },
-    { id: "divider", label: "Divider" },
-  ]},
-  { label: "Inputs", items: [
-    { id: "button", label: "Button" },
-    { id: "input", label: "Input" },
-    { id: "formfield", label: "FormField" },
-  ]},
-  { label: "Display", items: [
-    { id: "card", label: "Card" },
-    { id: "badge", label: "Badge" },
-    { id: "chip", label: "Chip" },
-    { id: "avatar", label: "Avatar" },
-    { id: "stat", label: "Stat" },
-  ]},
-  { label: "Feedback", items: [
-    { id: "alert", label: "Alert" },
-    { id: "spinner", label: "Spinner" },
-    { id: "progress", label: "Progress" },
-  ]},
-  { label: "Navigation", items: [
-    { id: "navbar", label: "Navbar" },
-  ]},
+  {
+    label: "Layout", items: [
+      { id: "stack", label: "Stack" },
+      { id: "grid", label: "Grid" },
+      { id: "section", label: "Section" },
+    ]
+  },
+  {
+    label: "Typography", items: [
+      { id: "heading", label: "Heading" },
+      { id: "text", label: "Text" },
+      { id: "divider", label: "Divider" },
+    ]
+  },
+  {
+    label: "Inputs", items: [
+      { id: "button", label: "Button" },
+      { id: "input", label: "Input" },
+      { id: "formfield", label: "FormField" },
+    ]
+  },
+  {
+    label: "Display", items: [
+      { id: "card", label: "Card" },
+      { id: "badge", label: "Badge" },
+      { id: "chip", label: "Chip" },
+      { id: "avatar", label: "Avatar" },
+      { id: "stat", label: "Stat" },
+    ]
+  },
+  {
+    label: "Feedback", items: [
+      { id: "alert", label: "Alert" },
+      { id: "spinner", label: "Spinner" },
+      { id: "progress", label: "Progress" },
+    ]
+  },
+  {
+    label: "Navigation", items: [
+      { id: "navbar", label: "Navbar" },
+    ]
+  },
 ];
 
 function Sidebar({ active }: { active: string }) {
@@ -493,8 +505,8 @@ function ChipDocs() {
           ))}
         </Stack>
         <Stack direction="horizontal" gap="2" style={{ flexWrap: "wrap" }}>
-          <Chip variant="accent" onDismiss={() => {}}>Dismissible</Chip>
-          <Chip variant="success" onDismiss={() => {}}>Tag</Chip>
+          <Chip variant="accent" onDismiss={() => { }}>Dismissible</Chip>
+          <Chip variant="success" onDismiss={() => { }}>Tag</Chip>
         </Stack>
       </Demo>
       <Code>{`<Chip variant="accent">Design system</Chip>
@@ -687,7 +699,7 @@ export default function DocsPage() {
     <ProfileProvider>
       {/* Top nav */}
       <div style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "var(--renge-color-bg)", borderBottom: "1px solid var(--renge-color-border-subtle)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 var(--renge-space-5)", height: 52, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ maxWidth: 1260, margin: "0 auto", padding: "0 var(--renge-space-5)", height: 52, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Stack direction="horizontal" gap="5" align="center">
             <Link href="/" style={{ fontFamily: "var(--font-display)", fontSize: "var(--renge-font-size-xl)", color: "var(--renge-color-fg)", textDecoration: "none", letterSpacing: "-0.01em" }}>Renge</Link>
             <span style={{ color: "var(--renge-color-border)", fontSize: "var(--renge-font-size-base)" }}>/</span>
@@ -702,7 +714,7 @@ export default function DocsPage() {
       </div>
 
       {/* Layout */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 var(--renge-space-5)", paddingTop: "calc(52px + var(--renge-space-7))", paddingBottom: "var(--renge-space-8)", display: "flex", gap: "var(--renge-space-8)", alignItems: "flex-start" }}>
+      <div style={{ maxWidth: 1260, margin: "0 auto", padding: "0 var(--renge-space-5)", paddingTop: "calc(52px + var(--renge-space-7))", paddingBottom: "var(--renge-space-8)", display: "flex", gap: "var(--renge-space-8)", alignItems: "flex-start" }}>
 
         {/* Sidebar */}
         <Sidebar active={activeSection} />
