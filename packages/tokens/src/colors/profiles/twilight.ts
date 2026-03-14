@@ -19,13 +19,13 @@ export const twilight: SemanticColorMap = {
   fgInverse: oklch(palette.deepIndigo),
   border: "oklch(35% 0.08 270)",
   borderSubtle: "oklch(28% 0.06 270)",
-  borderFocus: oklch(palette.lavender),
-  accent: oklch(palette.lavender),
-  accentHover: oklch(palette.skyBlue),
+  borderFocus: "oklch(75% 0.26 240)",          // lavender, chroma eased for dark bg
+  accent:      "oklch(75% 0.26 240)",          // lavender — presence without eye fatigue
+  accentHover: "oklch(75% 0.32 240)",          // slightly richer on hover
   accentSubtle: "oklch(30% 0.12 250)",
   success: oklch(palette.seaFoam),
   successSubtle: "oklch(28% 0.10 170)",
-  warning: oklch(palette.honeyYellow),
+  warning: "oklch(80% 0.26 50)",
   warningSubtle: "oklch(28% 0.10 50)",
   danger: oklch(palette.coralPink),
   dangerSubtle: "oklch(28% 0.10 350)",
