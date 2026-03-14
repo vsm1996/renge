@@ -1,0 +1,3 @@
+{
+  "buildCommand": "pnpm --filter @renge/tokens build && next build"
+}
