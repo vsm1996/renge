@@ -22,7 +22,7 @@ export const ocean: SemanticColorMap = {
   borderFocus: oklch(palette.skyBlue),
   accent: oklch(palette.skyBlue),
   accentHover: oklch(palette.riverBlue),
-  accentSubtle: "oklch(92% 0.08 210)",
+  accentSubtle: "oklch(92% 0.04 210)",
   success: oklch(palette.grassGreen),
   successSubtle: "oklch(92% 0.08 120)",
   warning: oklch(palette.sunsetOrange),
