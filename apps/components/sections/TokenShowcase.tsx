@@ -22,7 +22,7 @@ const fadeUp = {
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
-      fontSize: "var(--renge-font-size-xs)",
+      fontSize: "var(--renge-font-size-sm)",
       color: "var(--renge-color-accent)",
       letterSpacing: "0.2em",
       textTransform: "uppercase",
@@ -98,7 +98,7 @@ function ColorShowcase() {
               transition: "background 600ms var(--renge-easing-ease-in-out)",
             }} />
             <p style={{
-              fontSize: "var(--renge-font-size-xs)",
+              fontSize: "var(--renge-font-size-sm)",
               color: "var(--renge-color-fg-muted)",
               fontFamily: "var(--font-mono, monospace)",
               margin: 0,
@@ -134,7 +134,7 @@ function SpacingShowcase() {
           <div key={step} style={{ display: "flex", alignItems: "center", gap: "var(--renge-space-4)" }}>
             <div style={{
               width: 32,
-              fontSize: "var(--renge-font-size-xs)",
+              fontSize: "var(--renge-font-size-sm)",
               color: "var(--renge-color-fg-muted)",
               fontFamily: "var(--font-mono, monospace)",
               flexShrink: 0,
@@ -151,7 +151,7 @@ function SpacingShowcase() {
               flexShrink: 0,
             }} />
             <div style={{
-              fontSize: "var(--renge-font-size-xs)",
+              fontSize: "var(--renge-font-size-sm)",
               color: "var(--renge-color-fg-muted)",
               fontFamily: "var(--font-mono, monospace)",
               letterSpacing: "0.04em",
@@ -216,7 +216,7 @@ function TypeScaleShowcase() {
                 {key === "4xl" || key === "3xl" || (isMobile && key === "2xl") ? "Proportion." : "The ratios that appear in living things."}
               </span>
               <span style={{
-                fontSize: "var(--renge-font-size-xs)",
+                fontSize: "var(--renge-font-size-sm)",
                 color: "var(--renge-color-fg-muted)",
                 fontFamily: "var(--font-mono, monospace)",
                 flexShrink: 0,
@@ -260,7 +260,7 @@ function EasingRow({ label, curve }: { label: string; curve: [number, number, nu
     <div style={{ display: "flex", alignItems: "center", gap: "var(--renge-space-4)" }}>
       <div style={{
         width: 80,
-        fontSize: "var(--renge-font-size-xs)",
+        fontSize: "var(--renge-font-size-sm)",
         color: "var(--renge-color-fg-muted)",
         fontFamily: "var(--font-mono, monospace)",
         flexShrink: 0,
@@ -345,7 +345,7 @@ function RadiusShowcase() {
               borderRadius: key === "full" ? "var(--renge-radius-full)" : `var(--renge-radius-${key})`,
             }} />
             <div style={{
-              fontSize: "var(--renge-font-size-xs)",
+              fontSize: "var(--renge-font-size-sm)",
               color: "var(--renge-color-fg-muted)",
               fontFamily: "var(--font-mono, monospace)",
               textAlign: "center",
