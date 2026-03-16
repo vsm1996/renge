@@ -1,17 +1,17 @@
-# @renge/tokens
+# @renge-ui/tokens
 
 The proportional foundation of the Renge design system. Zero dependencies. Generates a complete set of CSS custom properties from mathematical first principles.
 
 ## Install
 
 ```bash
-pnpm add @renge/tokens
+pnpm add @renge-ui/tokens
 ```
 
 ## Quick Start
 
 ```ts
-import { createRengeTheme } from '@renge/tokens';
+import { createRengeTheme } from '@renge-ui/tokens';
 
 const theme = createRengeTheme();
 
@@ -164,7 +164,7 @@ import {
   PHI,
   GOLDEN_ANGLE,
   FIBONACCI,
-} from '@renge/tokens';
+} from '@renge-ui/tokens';
 ```
 
 ### `phyllotaxis({ count, spread?, angleOffset?, scale? })`

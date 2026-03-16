@@ -1,7 +1,7 @@
 // packages/react/src/components/Text.tsx
 
 import { forwardRef, type ElementType, type ComponentPropsWithoutRef } from 'react';
-import type { AnimationName } from '@renge/tokens';
+import type { AnimationName } from '@renge-ui/tokens';
 
 type SizeKey = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 type ColorKey = 'fg' | 'fg-subtle' | 'fg-muted' | 'accent' | 'success' | 'warning' | 'danger';

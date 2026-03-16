@@ -1,7 +1,7 @@
 // packages/react/src/components/Button.tsx
 
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
-import type { AnimationName } from '@renge/tokens';
+import type { AnimationName } from '@renge-ui/tokens';
 
 type SizeKey = 'sm' | 'md' | 'lg';
 type Variant = 'solid' | 'outline' | 'ghost';

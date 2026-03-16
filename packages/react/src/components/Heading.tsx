@@ -1,7 +1,7 @@
 // packages/react/src/components/Heading.tsx
 
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
-import type { AnimationName } from '@renge/tokens';
+import type { AnimationName } from '@renge-ui/tokens';
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6;
 type SizeKey = 'lg' | 'xl' | '2xl' | '3xl' | '4xl';

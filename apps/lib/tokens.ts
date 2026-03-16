@@ -9,8 +9,8 @@ import {
   createSemanticColorVars,
   PHI,
   FIBONACCI,
-} from "@renge/tokens";
-import type { ProfileName, ProfileMode } from "@renge/tokens";
+} from "@renge-ui/tokens";
+import type { ProfileName, ProfileMode } from "@renge-ui/tokens";
 
 export type { ProfileMode };
 

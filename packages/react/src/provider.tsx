@@ -1,6 +1,6 @@
 import { useMemo, useInsertionEffect, type ReactNode } from 'react';
-import { createRengeTheme } from '@renge/tokens';
-import type { RengeThemeConfig, RengeTheme } from '@renge/tokens';
+import { createRengeTheme } from '@renge-ui/tokens';
+import type { RengeThemeConfig, RengeTheme } from '@renge-ui/tokens';
 import { RengeContext } from './context';
 export { useRenge } from './hooks';
 

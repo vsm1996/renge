@@ -27,9 +27,9 @@ Renge defines how an interface *looks* — proportion, rhythm, color, motion cad
 If you need capacity-aware behavior, [Harmonia UI](https://github.com/vsm1996/harmonia-ui) consumes Renge tokens and modulates them based on human state. Renge never knows Harmonia exists. The dependency flows one direction.
 
 ```
-@renge/tokens       ← proportional source of truth
+@renge-ui/tokens       ← proportional source of truth
        ↑
-@renge/react        ← optional component layer
+@renge-ui/react        ← optional component layer
        ↑
 harmonia-ui         ← behavioral layer (consumes Renge)
        ↑
@@ -46,20 +46,20 @@ Components follow fractal design principles — a card at 200px and a card at 80
 
 | Package | Purpose | Status |
 |---------|---------|--------|
-| `@renge/tokens` | Design tokens — spacing, typography, color, motion, radius, animation, phyllotaxis | ✅ v0.1 |
-| `@renge/react` | Component primitives — Stack, Grid, Text, Card, Button, Heading, Divider, Section | ✅ v0.1 |
-| `@renge/tailwind` | Tailwind CSS preset | Planned |
+| `@renge-ui/tokens` | Design tokens — spacing, typography, color, motion, radius, animation, phyllotaxis | ✅ v0.1 |
+| `@renge-ui/react` | Component primitives — Stack, Grid, Text, Card, Button, Heading, Divider, Section | ✅ v0.1 |
+| `@renge-ui/tailwind` | Tailwind CSS preset | Planned |
 
 ---
 
 ## Quick Start
 
 ```bash
-pnpm add @renge/tokens
+pnpm add @renge-ui/tokens
 ```
 
 ```ts
-import { createRengeTheme } from '@renge/tokens';
+import { createRengeTheme } from '@renge-ui/tokens';
 
 const theme = createRengeTheme();
 
@@ -159,7 +159,7 @@ Three layers. Components only touch the outermost one.
 | **Twilight** | Dark, cool | Lavender |
 
 ```ts
-import { createRengeTheme } from '@renge/tokens';
+import { createRengeTheme } from '@renge-ui/tokens';
 
 // Default: Ocean
 const light = createRengeTheme();
@@ -178,7 +178,7 @@ const dark = createRengeTheme({ profile: 'twilight' });
 Everything has a sensible default. Everything is configurable.
 
 ```ts
-import { createRengeTheme, PHI } from '@renge/tokens';
+import { createRengeTheme, PHI } from '@renge-ui/tokens';
 
 const theme = createRengeTheme({
   baseUnit: 4,           // Spacing multiplier (px)
@@ -223,7 +223,7 @@ This is implementation intent, not chaos. The drift is what keeps surfaces from 
 A utility for golden-angle spiral arrangements — the same pattern that positions seeds in a sunflower head.
 
 ```ts
-import { phyllotaxis } from '@renge/tokens';
+import { phyllotaxis } from '@renge-ui/tokens';
 
 const points = phyllotaxis({
   count: 50,

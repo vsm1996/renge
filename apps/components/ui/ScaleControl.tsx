@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { createSpacingScale, createRadiusScale, createFractalScale, createTypeScale } from "@renge/tokens";
+import { createSpacingScale, createRadiusScale, createFractalScale, createTypeScale } from "@renge-ui/tokens";
 
 const SCALE_KEY = "renge-scale";
 const DEFAULT_BASE = 6;
 const MIN_BASE = 2;
 const MAX_BASE = 8;
 
-// Maintain the typeBase:baseUnit ratio from @renge/tokens defaults (16 / 6)
+// Maintain the typeBase:baseUnit ratio from @renge-ui/tokens defaults (16 / 6)
 const TYPE_MULTIPLIER = 16 / 6;
 
 // Accessibility floor — honor the PHI math, then clamp to readable minimums

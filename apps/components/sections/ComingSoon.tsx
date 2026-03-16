@@ -76,7 +76,7 @@ export function ComingSoon() {
             letterSpacing: "-0.02em",
           }}
         >
-          @renge/react
+          @renge-ui/react
         </motion.h2>
 
         <motion.p

@@ -82,7 +82,7 @@ const OPTIONS = [
     id: "css",
     label: "CSS",
     description: "CSS custom properties — framework agnostic.",
-    code: `import { createRengeTheme } from "@renge/tokens";
+    code: `import { createRengeTheme } from "@renge-ui/tokens";
 
 const theme = createRengeTheme({ profile: "ocean" });
 
@@ -101,7 +101,7 @@ document.head.appendChild(style);`,
   FIBONACCI,
   createRengeTheme,
   profiles,
-} from "@renge/tokens";
+} from "@renge-ui/tokens";
 
 const theme = createRengeTheme({ profile: "earth" });
 // theme.vars — Record<string, string>
@@ -113,7 +113,7 @@ const theme = createRengeTheme({ profile: "earth" });
     label: "Next.js",
     description: "Server-side injection — no flash.",
     code: `// app/layout.tsx
-import { createRengeTheme } from "@renge/tokens";
+import { createRengeTheme } from "@renge-ui/tokens";
 
 export default function RootLayout({ children }) {
   const theme = createRengeTheme({ profile: "ocean" });
@@ -178,7 +178,7 @@ export function GettingStarted() {
           }}>
             Install and consume.
           </h2>
-          <CodeBlock code="pnpm add @renge/tokens" lang="bash" />
+          <CodeBlock code="pnpm add @renge-ui/tokens" lang="bash" />
         </motion.div>
 
         {/* Option tabs */}

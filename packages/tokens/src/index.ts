@@ -1,5 +1,5 @@
 /**
- * @renge/tokens
+ * @renge-ui/tokens
  *
  * The proportional foundation.
  * φ-based typography, Fibonacci spacing, OKLCH colors, natural motion.

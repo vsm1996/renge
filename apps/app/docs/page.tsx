@@ -10,7 +10,7 @@ import {
   Card, Badge, Chip, Avatar, Stat,
   Alert, Spinner, Progress,
   Navbar,
-} from "@renge/react";
+} from "@renge-ui/react";
 import { ProfileProvider, ProfileToggle } from "@/components/ui/ProfileToggle";
 
 // ============================================================================
@@ -1057,7 +1057,7 @@ function AnimationsDocs() {
 
 function PatternsDocs() {
   return (
-    <ComponentSection id="patterns" title="Patterns" description="Common composition patterns using @renge/react components.">
+    <ComponentSection id="patterns" title="Patterns" description="Common composition patterns using @renge-ui/react components.">
       <Demo label="Status card">
         <Card variant="outlined" padding="5" style={{ minWidth: 240 }}>
           <Stack gap="4">
@@ -1106,7 +1106,7 @@ function PatternsDocs() {
       </Demo>
       <Code>{`{/* Every component uses only CSS custom properties */}
 {/* Switch profiles and all colors update instantly */}
-import { createRengeTheme } from "@renge/tokens";
+import { createRengeTheme } from "@renge-ui/tokens";
 
 const theme = createRengeTheme({ profile: "twilight" });
 // Inject theme.css and all components adapt — no re-render.`}</Code>
@@ -1158,13 +1158,13 @@ export default function DocsPage() {
 
           {/* Page header */}
           <div style={{ paddingBottom: "var(--renge-space-6)", borderBottom: "1px solid var(--renge-color-border-subtle)" }}>
-            <p style={{ fontSize: "var(--renge-font-size-sm)", color: "var(--renge-color-accent)", letterSpacing: "0.2em", textTransform: "uppercase", margin: 0, marginBottom: "var(--renge-space-3)" }}>@renge/react</p>
+            <p style={{ fontSize: "var(--renge-font-size-sm)", color: "var(--renge-color-accent)", letterSpacing: "0.2em", textTransform: "uppercase", margin: 0, marginBottom: "var(--renge-space-3)" }}>@renge-ui/react</p>
             <Heading level={1} size="3xl" style={{ marginBottom: "var(--renge-space-4)", fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "-0.02em" }}>Components</Heading>
             <Text as="p" size="lg" color="fg-subtle" style={{ margin: 0, marginBottom: "var(--renge-space-5)", maxWidth: 560 }}>
               18 components built on the token system. Proportional. Accessible. Composable. No class names — every style references a Renge CSS variable.
             </Text>
             <Stack direction="horizontal" gap="3" style={{ flexWrap: "wrap" }}>
-              <Code>{"pnpm add @renge/tokens @renge/react"}</Code>
+              <Code>{"pnpm add @renge-ui/tokens @renge-ui/react"}</Code>
             </Stack>
             <Stack direction="horizontal" gap="3" style={{ marginTop: "var(--renge-space-4)", flexWrap: "wrap" }}>
               <Badge variant="neutral">forwardRef</Badge>

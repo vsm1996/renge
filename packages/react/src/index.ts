@@ -49,5 +49,5 @@ export type {
 } from './components';
 
 // Re-export tokens for convenience
-export { createRengeTheme, PHI, FIBONACCI, GOLDEN_ANGLE, ANIMATION_NAMES } from '@renge/tokens';
-export type { RengeThemeConfig, RengeTheme, ProfileName, ProfileMode, ProfileVariant, AnimationName } from '@renge/tokens';
+export { createRengeTheme, PHI, FIBONACCI, GOLDEN_ANGLE, ANIMATION_NAMES } from '@renge-ui/tokens';
+export type { RengeThemeConfig, RengeTheme, ProfileName, ProfileMode, ProfileVariant, AnimationName } from '@renge-ui/tokens';

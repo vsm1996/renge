@@ -12,7 +12,7 @@
  */
 
 import { forwardRef, useMemo, type ComponentPropsWithoutRef } from "react";
-import { phyllotaxis } from "@renge/tokens";
+import { phyllotaxis } from "@renge-ui/tokens";
 
 // ============================================================================
 // Keyframe injection (module-level)

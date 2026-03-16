@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { ProfileProvider, ProfileToggle } from "@/components/ui/ProfileToggle";
 import { Nav } from "@/components/ui/Nav";
-import { Stack, Grid, Section, Text, Heading, Card, Badge, Divider } from "@renge/react";
+import { Stack, Grid, Section, Text, Heading, Card, Badge, Divider } from "@renge-ui/react";
 
 // ============================================================================
 // Data

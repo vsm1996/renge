@@ -32,10 +32,10 @@ importers:
 
   apps:
     dependencies:
-      '@renge/react':
+      '@renge-ui/react':
         specifier: workspace:*
         version: link:../packages/react
-      '@renge/tokens':
+      '@renge-ui/tokens':
         specifier: workspace:*
         version: link:../packages/tokens
       '@vercel/analytics':
@@ -75,7 +75,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@renge/tokens':
+      '@renge-ui/tokens':
         specifier: workspace:*
         version: link:../tokens
     devDependencies:

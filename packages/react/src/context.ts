@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import type { RengeTheme } from '@renge/tokens';
+import type { RengeTheme } from '@renge-ui/tokens';
 
 export interface RengeContextValue {
   theme: RengeTheme;

@@ -6,5 +6,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   sourcemap: true,
-  external: ["react", "react-dom", "@renge/tokens"],
+  external: ["react", "react-dom", "@renge-ui/tokens"],
 });

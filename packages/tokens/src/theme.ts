@@ -1,7 +1,7 @@
 /**
  * Theme Generator
  *
- * createRengeTheme() is the main entry point for @renge/tokens.
+ * createRengeTheme() is the main entry point for @renge-ui/tokens.
  * Takes configuration, returns { config, vars, css }.
  */
 

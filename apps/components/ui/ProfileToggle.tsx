@@ -1,8 +1,8 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { profiles } from "@renge/tokens";
-import type { ProfileName, ProfileMode } from "@renge/tokens";
+import { profiles } from "@renge-ui/tokens";
+import type { ProfileName, ProfileMode } from "@renge-ui/tokens";
 
 const PROFILE_KEY = "renge-profile";
 const MODE_KEY = "renge-mode";

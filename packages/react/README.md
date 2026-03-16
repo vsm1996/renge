@@ -1,11 +1,11 @@
-# @renge/react
+# @renge-ui/react
 
-React component primitives for the Renge design system. Components consume `@renge/tokens` CSS custom properties via inline styles — no CSS-in-JS runtime, no class names.
+React component primitives for the Renge design system. Components consume `@renge-ui/tokens` CSS custom properties via inline styles — no CSS-in-JS runtime, no class names.
 
 ## Install
 
 ```bash
-pnpm add @renge/react
+pnpm add @renge-ui/react
 ```
 
 ## Setup
@@ -13,7 +13,7 @@ pnpm add @renge/react
 Wrap your app in `RengeProvider`. It injects the generated CSS variables into `<head>` automatically.
 
 ```tsx
-import { RengeProvider } from '@renge/react';
+import { RengeProvider } from '@renge-ui/react';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `config` | `RengeThemeConfig` | `{}` | Theme configuration (see `@renge/tokens`) |
+| `config` | `RengeThemeConfig` | `{}` | Theme configuration (see `@renge-ui/tokens`) |
 | `injectCSS` | `boolean` | `true` | Inject CSS into `<head>`. Set `false` for SSR or manual injection. |
 
 ---
@@ -207,7 +207,7 @@ Page section with max-width constraint and auto-centering.
 Use `injectCSS={false}` and inject the CSS string server-side:
 
 ```tsx
-import { createRengeTheme } from '@renge/tokens';
+import { createRengeTheme } from '@renge-ui/tokens';
 
 // Server
 const theme = createRengeTheme({ profile: 'ocean' });

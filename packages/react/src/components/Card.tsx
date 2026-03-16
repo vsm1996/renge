@@ -1,7 +1,7 @@
 // packages/react/src/components/Card.tsx
 
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
-import type { AnimationName } from '@renge/tokens';
+import type { AnimationName } from '@renge-ui/tokens';
 
 type SpaceKey = '0' | '1' | '2' | '3' | '4' | '5' | '6';
 type RadiusKey = 'none' | '1' | '2' | '3' | '4' | '5' | 'full';
