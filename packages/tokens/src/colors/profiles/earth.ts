@@ -9,20 +9,20 @@ import type { SemanticColorMap } from "../../types";
 import { oklch, palette } from "../palette";
 
 const light: SemanticColorMap = {
-  bg:           "oklch(97% 0.015 52)",           // warm parchment — golden-beige, clearly not white
-  bgSubtle:     "oklch(93% 0.04 50)",            // visible ochre warmth
-  bgMuted:      "oklch(86% 0.08 48)",            // clay-toned surface
-  bgInverse:    "oklch(22% 0.05 35)",            // dark soil inverse
-  fg:           "oklch(18% 0.06 40)",            // warm dark brown, not neutral black
-  fgSubtle:     "oklch(34% 0.10 42)",
-  fgMuted:      "oklch(52% 0.10 46)",
-  fgInverse:    "oklch(97% 0.015 52)",           // parchment on dark surface
-  border:       "oklch(76% 0.08 48)",
-  borderSubtle: "oklch(89% 0.05 50)",
-  borderFocus:  "oklch(48% 0.20 50)",            // golden ochre — ~5:1 on parchment
-  accent:       "oklch(48% 0.20 50)",            // golden ochre — warm clay, clearly distinct from fire's red-orange
-  accentHover:  "oklch(40% 0.22 48)",
-  accentSubtle: "oklch(92% 0.10 50)",            // golden tint on parchment
+  bg:           "oklch(98% 0.01 70)",            // warm cream — soft ivory, clearly beige not white
+  bgSubtle:     "oklch(94% 0.02 68)",            // biscuit/linen tone
+  bgMuted:      "oklch(88% 0.04 65)",            // deeper cream, like aged parchment
+  bgInverse:    "oklch(22% 0.05 45)",            // dark walnut inverse
+  fg:           "oklch(18% 0.04 50)",            // warm near-black, brown not blue-black
+  fgSubtle:     "oklch(35% 0.07 52)",
+  fgMuted:      "oklch(52% 0.07 58)",
+  fgInverse:    "oklch(97% 0.01 70)",            // cream on dark surface
+  border:       "oklch(80% 0.04 65)",
+  borderSubtle: "oklch(91% 0.02 68)",
+  borderFocus:  "oklch(46% 0.16 58)",            // warm tan-brown — ~5:1 on cream
+  accent:       "oklch(46% 0.16 58)",            // warm tan — clearly golden-beige, not orange or red
+  accentHover:  "oklch(38% 0.18 55)",
+  accentSubtle: "oklch(94% 0.05 68)",            // barely-there cream tint
   success:      oklch(palette.grassGreen),
   successSubtle:"oklch(92% 0.06 120)",
   warning:      oklch(palette.sunsetOrange),

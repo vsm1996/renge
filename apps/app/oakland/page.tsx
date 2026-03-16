@@ -188,6 +188,10 @@ const HABITAT_LABELS: Record<string, string> = {
 // Animation helpers
 // ============================================================================
 
+// Round to 2 decimal places — prevents hydration mismatches from floating-point
+// differences between Node.js and browser (e.g. Math.sin(Math.PI) = 1.22e-16, not 0)
+const f = (n: number) => Math.round(n * 100) / 100;
+
 function FadeIn({
   children,
   delay = 0,
@@ -287,8 +291,8 @@ const PLANT_SVGS: Record<string, React.FC<{ size?: number }>> = {
               const pl = 6 * t;
               return (
                 <g key={t}>
-                  <line x1={px} y1={py} x2={px + Math.cos(angle)*pl} y2={py + Math.sin(angle)*pl} />
-                  <line x1={px} y1={py} x2={px - Math.cos(angle)*pl} y2={py - Math.sin(angle)*pl} />
+                  <line x1={f(px)} y1={f(py)} x2={f(px + Math.cos(angle)*pl)} y2={f(py + Math.sin(angle)*pl)} />
+                  <line x1={f(px)} y1={f(py)} x2={f(px - Math.cos(angle)*pl)} y2={f(py - Math.sin(angle)*pl)} />
                 </g>
               );
             })}
@@ -334,13 +338,15 @@ const PLANT_SVGS: Record<string, React.FC<{ size?: number }>> = {
         <g key={fi}>
           {[0,90,180,270].map((a) => {
             const rad = (a * Math.PI) / 180;
-            const px = cx + Math.cos(rad) * r * 0.4;
-            const py = cy + Math.sin(rad) * r * 0.4;
-            const ex = cx + Math.cos(rad) * r;
-            const ey = cy + Math.sin(rad) * r;
-            const cx1 = cx + Math.cos(rad - 0.6) * r * 0.9;
-            const cy1 = cy + Math.sin(rad - 0.6) * r * 0.9;
-            return <path key={a} d={`M${px},${py} Q${cx1},${cy1} ${ex},${ey} Q${cx + Math.cos(rad+0.6)*r*0.9},${cy + Math.sin(rad+0.6)*r*0.9} ${px},${py}`} />;
+            const px = f(cx + Math.cos(rad) * r * 0.4);
+            const py = f(cy + Math.sin(rad) * r * 0.4);
+            const ex = f(cx + Math.cos(rad) * r);
+            const ey = f(cy + Math.sin(rad) * r);
+            const cx1 = f(cx + Math.cos(rad - 0.6) * r * 0.9);
+            const cy1 = f(cy + Math.sin(rad - 0.6) * r * 0.9);
+            const cx2 = f(cx + Math.cos(rad+0.6)*r*0.9);
+            const cy2 = f(cy + Math.sin(rad+0.6)*r*0.9);
+            return <path key={a} d={`M${px},${py} Q${cx1},${cy1} ${ex},${ey} Q${cx2},${cy2} ${px},${py}`} />;
           })}
           {/* Center */}
           <circle cx={cx} cy={cy} r={2} />
@@ -526,7 +532,7 @@ const PLANT_SVGS: Record<string, React.FC<{ size?: number }>> = {
         <g key={`fl${i}`}>
           {[0,60,120,180,240,300].map(a=>{
             const r=5, rad=a*Math.PI/180;
-            return <circle key={a} cx={x+Math.cos(rad)*r} cy={y+Math.sin(rad)*r} r={1.5} />;
+            return <circle key={a} cx={f(x+Math.cos(rad)*r)} cy={f(y+Math.sin(rad)*r)} r={1.5} />;
           })}
         </g>
       ))}
@@ -645,7 +651,7 @@ const PARK_SVGS: Record<string, React.FC> = {
       ))}
       {/* Cattail fringe along shore */}
       {[30,45,60,75,195,210,225,240].map((x,i)=>{
-        const y = i < 4 ? 78+Math.sin(i)*4 : 75+Math.cos(i)*3;
+        const y = f(i < 4 ? 78+Math.sin(i)*4 : 75+Math.cos(i)*3);
         return (
           <g key={x}>
             <line x1={x} y1={95} x2={x} y2={y} />
@@ -1451,9 +1457,9 @@ function TidalRhythm() {
   };
 
   const pts = Array.from({ length: ticks + 1 }, (_, i) => {
-    const x = (i / ticks) * width;
+    const x = f((i / ticks) * width);
     const level = waterLevel(i);
-    const y = height / 2 - (level / 1.2) * (height * 0.4);
+    const y = f(height / 2 - (level / 1.2) * (height * 0.4));
     return `${x},${y}`;
   });
 

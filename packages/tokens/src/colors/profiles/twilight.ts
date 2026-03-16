@@ -3,7 +3,7 @@
  *
  * The transition between daylight and darkness.
  *
- * Light: Soft dusk periwinkle sky — lavender-tinted surfaces, orange horizon accent.
+ * Light: Soft dusk periwinkle sky — lavender-tinted surfaces, sunset pink-orange horizon accent.
  * Dark:  Deep inky indigo-purple — the tension of cool depth vs warm horizon glow.
  *
  * The amber/orange accent reads against both modes:
@@ -25,10 +25,10 @@ const light: SemanticColorMap = {
   fgInverse:    "oklch(92% 0.04 258)",           // cool near-white on dark
   border:       "oklch(78% 0.06 268)",
   borderSubtle: "oklch(88% 0.04 268)",
-  borderFocus:  oklch(palette.sunsetOrange),     // warm horizon against cool sky
-  accent:       oklch(palette.sunsetOrange),
-  accentHover:  "oklch(54% 0.22 36)",
-  accentSubtle: "oklch(93% 0.04 40)",            // barely-warm tint on periwinkle bg
+  borderFocus:  "oklch(54% 0.22 18)",            // sunset pink-orange — ~5:1 on periwinkle bg
+  accent:       "oklch(54% 0.22 18)",            // vivid sunset pink-orange, distinct from fire's red and earth's tan
+  accentHover:  "oklch(46% 0.24 16)",
+  accentSubtle: "oklch(94% 0.06 18)",            // warm rose flush on periwinkle bg
   success:      oklch(palette.grassGreen),
   successSubtle:"oklch(92% 0.06 120)",
   warning:      "oklch(62% 0.20 40)",
