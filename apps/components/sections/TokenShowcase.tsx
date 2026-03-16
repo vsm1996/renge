@@ -338,8 +338,8 @@ function RadiusShowcase() {
         {radiusSteps.map(({ key, px, fib }) => (
           <div key={key} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "var(--renge-space-2)" }}>
             <div style={{
-              width: 56,
-              height: 56,
+              width: key === "full" ? 120 : 72,
+              height: 72,
               background: "var(--renge-color-accent-subtle)",
               border: "1px solid var(--renge-color-accent)",
               borderRadius: key === "full" ? "var(--renge-radius-full)" : `var(--renge-radius-${key})`,

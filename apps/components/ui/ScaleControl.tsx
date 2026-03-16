@@ -1,18 +1,25 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { createSpacingScale, createRadiusScale, createFractalScale } from "@renge/tokens";
+import { createSpacingScale, createRadiusScale, createFractalScale, createTypeScale } from "@renge/tokens";
 
 const SCALE_KEY = "renge-scale";
 const DEFAULT_BASE = 6;
 const MIN_BASE = 2;
 const MAX_BASE = 8;
 
+// Maintain the typeBase:baseUnit ratio from @renge/tokens defaults (16 / 6)
+const TYPE_MULTIPLIER = 16 / 6;
+
+// Accessibility floor — honor the PHI math, then clamp to readable minimums
+const FONT_FLOOR: Partial<Record<string, number>> = { xs: 11, sm: 13 };
+
 function applyScale(base: number) {
   const root = document.documentElement;
   const spacing = createSpacingScale(base);
   const radius = createRadiusScale(base);
   const fractal = createFractalScale(base);
+  const typography = createTypeScale(base * TYPE_MULTIPLIER);
 
   for (const [k, v] of Object.entries(spacing)) {
     root.style.setProperty(`--renge-space-${k}`, v);
@@ -23,6 +30,12 @@ function applyScale(base: number) {
   for (const [k, v] of Object.entries(fractal)) {
     root.style.setProperty(`--renge-size-${k}`, v);
   }
+  for (const [k, { fontSize }] of Object.entries(typography)) {
+    const px = parseFloat(fontSize);
+    const min = FONT_FLOOR[k];
+    const final = min !== undefined ? Math.max(px, min) : px;
+    root.style.setProperty(`--renge-font-size-${k}`, `${final.toFixed(4)}px`);
+  }
 }
 
 function clearScale() {
@@ -31,9 +44,11 @@ function clearScale() {
   const spacing = createSpacingScale(DEFAULT_BASE);
   const radius = createRadiusScale(DEFAULT_BASE);
   const fractal = createFractalScale(DEFAULT_BASE);
+  const typography = createTypeScale(DEFAULT_BASE * TYPE_MULTIPLIER);
   for (const k of Object.keys(spacing)) root.style.removeProperty(`--renge-space-${k}`);
   for (const k of Object.keys(radius)) root.style.removeProperty(`--renge-radius-${k}`);
   for (const k of Object.keys(fractal)) root.style.removeProperty(`--renge-size-${k}`);
+  for (const k of Object.keys(typography)) root.style.removeProperty(`--renge-font-size-${k}`);
 }
 
 let saveTimer: ReturnType<typeof setTimeout> | null = null;

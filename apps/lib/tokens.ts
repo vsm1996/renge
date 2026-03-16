@@ -20,7 +20,20 @@ export type { ProfileName };
 /** Generate :root CSS for a given profile (base scales + that profile's colors) */
 export function generateRootCSS(profile: ProfileName = "ocean", baseUnit = 6): string {
   const theme = createRengeTheme({ profile, baseUnit });
-  return theme.css;
+
+  // Accessibility floor: PHI math gives xs≈6.1px, sm≈9.9px — correct but unreadable.
+  // Honor the math, then clamp to minimum readable sizes.
+  const FONT_FLOOR: Record<string, number> = { xs: 11, sm: 13 };
+  const patches = Object.entries(FONT_FLOOR)
+    .map(([key, min]) => {
+      const computed = parseFloat(theme.vars[`--renge-font-size-${key}`] ?? "0");
+      return computed < min ? `  --renge-font-size-${key}: ${min}px;` : null;
+    })
+    .filter((line): line is string => line !== null);
+
+  return patches.length > 0
+    ? `${theme.css}\n:root {\n${patches.join("\n")}\n}`
+    : theme.css;
 }
 
 /**

@@ -184,6 +184,10 @@ const HABITAT_LABELS: Record<string, string> = {
   riparian: "Riparian",
 };
 
+// Golden angle: 360° / φ² ≈ 137.5077640500378°
+// The angle between successive leaves on a stem — nature's solution to maximal sunlight exposure.
+const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
+
 // ============================================================================
 // Animation helpers
 // ============================================================================
@@ -240,6 +244,121 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
       {value.toLocaleString()}
       {suffix}
     </span>
+  );
+}
+
+// ============================================================================
+// Phyllotaxis Flora Map
+// ============================================================================
+
+// 55 total positions (Fibonacci) — the spiral needs density to be visible.
+// 14 plants are spread evenly across these positions; the rest are background dots.
+const PHYLLOTAXIS_TOTAL = 55;
+const PLANT_POSITIONS: number[] = PLANTS.map((_, i) =>
+  Math.round((i * (PHYLLOTAXIS_TOTAL - 1)) / (PLANTS.length - 1))
+);
+
+function PhyllotaxisFlora() {
+  const [hovered, setHovered] = useState<string | null>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const inView = useInView(svgRef, { once: true, margin: "-60px 0px" });
+
+  const SCALE = 13.5; // scale × √n → max radius at n=54: ~99px
+
+  // Pre-compute all 55 positions
+  const allDots = Array.from({ length: PHYLLOTAXIS_TOTAL }, (_, n) => {
+    const r = SCALE * Math.sqrt(n + 1);
+    const theta = n * GOLDEN_ANGLE;
+    const plantIdx = PLANT_POSITIONS.indexOf(n);
+    const plant = plantIdx !== -1 ? PLANTS[plantIdx] : null;
+    return { n, x: f(r * Math.cos(theta)), y: f(r * Math.sin(theta)), plant };
+  });
+
+  const hoveredPlant = hovered ? PLANTS.find((p) => p.id === hovered) : null;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "var(--renge-space-4)" }}>
+      <div style={{ position: "relative" }}>
+        <svg
+          ref={svgRef}
+          viewBox="-106 -106 212 212"
+          style={{ width: 320, height: 320 }}
+        >
+          {allDots.map(({ n, x, y, plant }) =>
+            plant ? (
+              // Plant dot — colored, larger, interactive
+              <motion.circle
+                key={`plant-${plant.id}`}
+                cx={x}
+                cy={y}
+                r={7}
+                fill={HABITAT_COLORS[plant.habitat]}
+                initial={{ opacity: 0 }}
+                animate={
+                  inView
+                    ? { opacity: hovered && hovered !== plant.id ? 0.15 : 0.9 }
+                    : { opacity: 0 }
+                }
+                transition={{ duration: 0.4, delay: n * 0.018, ease: [0.382, 0, 0.168, 1] }}
+                style={{ cursor: "pointer" }}
+                onMouseEnter={() => setHovered(plant.id)}
+                onMouseLeave={() => setHovered(null)}
+              />
+            ) : (
+              // Background dot — small, neutral, shows the spiral structure
+              <motion.circle
+                key={`bg-${n}`}
+                cx={x}
+                cy={y}
+                r={2.5}
+                fill="var(--renge-color-border)"
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 0.45 } : { opacity: 0 }}
+                transition={{ duration: 0.3, delay: n * 0.018 }}
+              />
+            )
+          )}
+        </svg>
+
+        {hoveredPlant && (
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              textAlign: "center",
+              pointerEvents: "none",
+              background: "color-mix(in oklch, var(--renge-color-bg) 96%, transparent)",
+              backdropFilter: "blur(8px)",
+              borderRadius: "var(--renge-radius-2)",
+              padding: "var(--renge-space-2) var(--renge-space-3)",
+              border: "1px solid var(--renge-color-border-subtle)",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <div style={{ fontFamily: "var(--font-body)", fontSize: "var(--renge-font-size-sm)", color: "var(--renge-color-fg)", fontWeight: 500 }}>
+              {hoveredPlant.name}
+            </div>
+            <div style={{ fontStyle: "italic", fontSize: "var(--renge-font-size-xs)", color: "var(--renge-color-fg-muted)" }}>
+              {hoveredPlant.latin}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Legend */}
+      <div style={{ display: "flex", gap: "var(--renge-space-4)", flexWrap: "wrap", justifyContent: "center" }}>
+        {(Object.entries(HABITAT_LABELS) as [string, string][]).map(([key, label]) => (
+          <div key={key} style={{ display: "flex", alignItems: "center", gap: "var(--renge-space-2)" }}>
+            <div style={{ width: 8, height: 8, borderRadius: "50%", background: HABITAT_COLORS[key], flexShrink: 0 }} />
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--renge-font-size-xs)", color: "var(--renge-color-fg-muted)" }}>
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -1123,6 +1242,39 @@ export default function OaklandPage() {
 
         <Divider />
 
+        {/* ── Phyllotaxis ───────────────────────────────────────────────────── */}
+        <Section style={{ paddingTop: "var(--renge-space-7)", paddingBottom: "var(--renge-space-7)" }}>
+          <Stack gap="6" align="center" style={{ textAlign: "center" }}>
+            <Stack gap="3" style={{ maxWidth: "36rem" }}>
+              <Text
+                size="sm"
+                style={{
+                  color: "var(--renge-color-accent)",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  fontFamily: "var(--font-body)",
+                }}
+              >
+                Phyllotaxis
+              </Text>
+              <Heading level={2} style={{ fontSize: "var(--renge-font-size-3xl)", letterSpacing: "-0.02em" }}>
+                137.5°.
+              </Heading>
+              <Text style={{ color: "var(--renge-color-fg-subtle)", lineHeight: 1.7 }}>
+                The golden angle. Every plant that has solved the problem of sunlight arrives
+                at this exact rotation between successive leaves. It emerges from PHI —
+                the same ratio that generates every step in Renge&apos;s spacing scale.
+              </Text>
+              <Text size="sm" style={{ color: "var(--renge-color-fg-muted)", lineHeight: 1.6 }}>
+                14 native plants from Oakland, arranged by the golden angle. Hover to identify.
+              </Text>
+            </Stack>
+            <PhyllotaxisFlora />
+          </Stack>
+        </Section>
+
+        <Divider />
+
         {/* ── Forest ────────────────────────────────────────────────────────── */}
         <Section style={{ paddingTop: "var(--renge-space-7)", paddingBottom: "var(--renge-space-6)" }}>
           <Stack gap="6">
@@ -1359,17 +1511,21 @@ export default function OaklandPage() {
               <svg
                 viewBox="0 0 120 120"
                 style={{ width: 64, height: 64, opacity: 0.25, color: "var(--renge-color-accent)" }}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={0.75}
               >
-                {/* Simple phyllotaxis-inspired spiral */}
-                <circle cx="60" cy="60" r="58" />
-                <circle cx="60" cy="60" r="36" />
-                <circle cx="60" cy="60" r="22.3" />
-                <circle cx="60" cy="60" r="13.8" />
-                <circle cx="60" cy="60" r="8.5" />
-                <circle cx="60" cy="60" r="2" fill="currentColor" />
+                {/* True phyllotaxis — 21 points at the golden angle */}
+                {Array.from({ length: 21 }, (_, n) => {
+                  const r = 9.5 * Math.sqrt(n + 1);
+                  const theta = n * GOLDEN_ANGLE;
+                  return (
+                    <circle
+                      key={n}
+                      cx={f(60 + r * Math.cos(theta))}
+                      cy={f(60 + r * Math.sin(theta))}
+                      r={2}
+                      fill="currentColor"
+                    />
+                  );
+                })}
               </svg>
               <Heading
                 level={2}
