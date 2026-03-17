@@ -1,0 +1,44 @@
+{
+  "name": "@renge-ui/tailwind",
+  "version": "1.0.0",
+  "description": "Tailwind CSS preset for the Renge design system — maps --renge-* CSS custom properties to utility classes.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "keywords": ["design-system", "tailwind", "tailwindcss", "preset", "css-variables", "golden-ratio"],
+  "author": "Vanessa Martin",
+  "license": "MIT",
+  "publishConfig": { "access": "public" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vsm1996/renge-ui"
+  },
+  "packageManager": "pnpm@10.30.2",
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0 <5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.0.0"
+  }
+}
