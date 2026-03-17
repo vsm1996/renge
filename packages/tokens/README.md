@@ -101,14 +101,14 @@ Formula: `typeBase × scaleRatio^n` where n ranges from -2 to +5.
 
 | Token | Formula | Default | Line Height |
 |-------|---------|---------|-------------|
-| `--renge-font-size-xs` | base × φ⁻² | ~6.1px | 1.5 |
-| `--renge-font-size-sm` | base × φ⁻¹ | ~9.9px | 1.5 |
+| `--renge-font-size-xs` | base × φ⁻² | ~6.1px | 1.618 |
+| `--renge-font-size-sm` | base × φ⁻¹ | ~9.9px | 1.618 |
 | `--renge-font-size-base` | base × φ⁰ | 16px | 1.618 |
-| `--renge-font-size-lg` | base × φ¹ | ~25.9px | 1.4 |
-| `--renge-font-size-xl` | base × φ² | ~41.9px | 1.3 |
-| `--renge-font-size-2xl` | base × φ³ | ~67.8px | 1.2 |
-| `--renge-font-size-3xl` | base × φ⁴ | ~109.7px | 1.2 |
-| `--renge-font-size-4xl` | base × φ⁵ | ~177.4px | 1.2 |
+| `--renge-font-size-lg` | base × φ¹ | ~25.9px | 1.618 |
+| `--renge-font-size-xl` | base × φ² | ~41.9px | 1.382 |
+| `--renge-font-size-2xl` | base × φ³ | ~67.8px | 1.382 |
+| `--renge-font-size-3xl` | base × φ⁴ | ~109.7px | 1.236 |
+| `--renge-font-size-4xl` | base × φ⁵ | ~177.4px | 1.236 |
 
 Note: `xs` (~6px) and `sm` (~10px) are very small. Use `base` and above for body copy.
 
@@ -120,15 +120,15 @@ Durations: `FIBONACCI[n] × 100ms`.
 |-------|----------|-------------|
 | `--renge-duration-0` | 0ms | Instant / disabled |
 | `--renge-duration-1` | 100ms | Micro-interactions, hover flashes |
-| `--renge-duration-2` | 100ms | Hover states |
-| `--renge-duration-3` | 200ms | Button presses, simple toggles |
-| `--renge-duration-4` | 300ms | Component transitions |
-| `--renge-duration-5` | 500ms | Page element reveals |
-| `--renge-duration-6` | 800ms | Complex transitions |
-| `--renge-duration-7` | 1300ms | Orchestrated sequences |
-| `--renge-duration-8` | 2100ms | Extended animations |
-| `--renge-duration-9` | 3400ms | Ambient, looping motion |
-| `--renge-duration-10` | 5500ms | Slow, breathing animations |
+| `--renge-duration-2` | 200ms | Hover states |
+| `--renge-duration-3` | 300ms | Button presses, simple toggles |
+| `--renge-duration-4` | 500ms | Component transitions |
+| `--renge-duration-5` | 800ms | Page element reveals |
+| `--renge-duration-6` | 1300ms | Complex transitions |
+| `--renge-duration-7` | 2100ms | Orchestrated sequences |
+| `--renge-duration-8` | 3400ms | Extended animations |
+| `--renge-duration-9` | 5500ms | Ambient, looping motion |
+| `--renge-duration-10` | 8900ms | Slow, breathing animations |
 
 Easing curves — all control points derived from φ (A = 1/φ² ≈ 0.382, B = 1/φ ≈ 0.618):
 
